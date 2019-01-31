@@ -1,7 +1,7 @@
 version: '3'
 services:
   php:
-    build: build/php
+    build: build_container_docker/php
     expose:
       - '9000'
     depends_on:
@@ -10,7 +10,7 @@ services:
       - ./:/var/www/html/symfony:cached
       - ./logs:/var/log
   web:
-    build: build/nginx
+    build: build_container_docker/nginx
     restart: always
     ports:
         - ‘81:80'
